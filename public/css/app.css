@@ -8350,7 +8350,24 @@ button.close {
   }
 }
 
-#myModal {
+.phone-list li {
+  float: left;
+  width: 100%;
+}
+
+.phone-list li span {
+  float: left;
+  width: 25%;
+  padding-left: 5px;
+}
+
+.phone-list li span.actions {
+  width: 10%;
+  cursor: pointer;
+}
+
+#myModal,
+#updateModal {
   color: #000;
 }
 

@@ -9,7 +9,21 @@
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Custom scss
-#myModal{
+.phone-list li{
+    float: left;
+    width: 100%;
+    span{
+        float: left;
+        width: 25%;
+        padding-left: 5px;
+    }
+    span.actions{
+        width: 10%;
+        cursor: pointer;
+    }
+}
+#myModal,
+#updateModal{
     color: #000;
 }
 .app-footer{
