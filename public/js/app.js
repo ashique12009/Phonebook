@@ -43474,7 +43474,15 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "panel-body" }, [
-        _vm._v("\n            Body\n        ")
+        _c(
+          "ul",
+          { staticClass: "list-group" },
+          _vm._l(_vm.list, function(item, key) {
+            return _c("li", { staticClass: "list-group-item" }, [
+              _vm._v(_vm._s(item.name))
+            ])
+          })
+        )
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "panel-footer" })
@@ -46461,12 +46469,32 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 var AddUi = __webpack_require__(62);
 /* harmony default export */ __webpack_exports__["default"] = ({
     components: {
         AddUi: AddUi
-    }
+    },
+    data: function data() {
+        return {
+            list: {},
+            errors: {}
+        };
+    },
+    mounted: function mounted() {
+        var self = this;
+        axios.post('/getData').then(function (response) {
+            console.log(response.data);
+            self.list = response.data;
+            $('#myModal').modal('hide');
+        }).catch(function (error) {
+            self.errors = error.response.data;
+        });
+    },
+
+    methods: {}
 });
 
 /***/ }),
