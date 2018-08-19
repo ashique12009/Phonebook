@@ -8350,3 +8350,21 @@ button.close {
   }
 }
 
+#myModal {
+  color: #000;
+}
+
+.app-footer {
+  padding: 5px;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.app-footer .content {
+  margin-top: 10px;
+}
+
