@@ -46128,13 +46128,15 @@ var UpdateUi = __webpack_require__(49);
             $('#updateModal').modal('show');
         },
         del: function del(key, id) {
-            var self = this;
-            axios.delete('/phonebook/' + id).then(function (response) {
-                console.log(response.data);
-                self.list.splice(key, 1);
-            }).catch(function (error) {
-                self.errors = error.response.data;
-            });
+            if (confirm("Are you sure you want to delete?")) {
+                var self = this;
+                axios.delete('/phonebook/' + id).then(function (response) {
+                    console.log(response.data);
+                    self.list.splice(key, 1);
+                }).catch(function (error) {
+                    self.errors = error.response.data;
+                });
+            }
         }
     }
 });
